@@ -28,7 +28,13 @@ public class ClienteService {
 
     @Transactional
     public void salvar(ClienteDTO clienteDTO) {
-        clienteRepository.save(modelMapper.map(clienteDTO, Cliente.class));
+        Cliente cliente = Cliente.builder()
+                .nome(clienteDTO.getNome())
+                .cpf(clienteDTO.getCpf())
+                .contato(clienteDTO.getContato())
+                .endereco(clienteDTO.getEndereco())
+                .build();
+        clienteRepository.save(cliente);
         log.info("Cadastrando cliente");
     }
 

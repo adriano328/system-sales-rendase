@@ -1,10 +1,12 @@
 package com.rendase.rendase.domain;
 
+import lombok.Builder;
 import lombok.Data;
 
 import javax.persistence.*;
 
 @Data
+@Builder
 @Entity
 @Table(name = "cliente")
 public class Cliente {
@@ -16,6 +18,9 @@ public class Cliente {
 
     @Column(name = "nome")
     private String nome;
+
+    @Column(name = "cpf")
+    private String cpf;
 
     @OneToOne(cascade = CascadeType.PERSIST, orphanRemoval = true)
     @JoinColumn(name = "enderecoid")

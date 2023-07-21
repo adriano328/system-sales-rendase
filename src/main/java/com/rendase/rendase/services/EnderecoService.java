@@ -8,6 +8,8 @@ import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
+
 
 @Service
 @RequiredArgsConstructor
@@ -16,6 +18,7 @@ public class EnderecoService {
     private final EnderecoRepository enderecoRepository;
     private final ModelMapper modelMapper;
 
+    @Transactional
     public void save(Endereco endereco) {
         enderecoRepository.save(endereco);
     }

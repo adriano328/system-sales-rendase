@@ -12,7 +12,7 @@ import org.springframework.stereotype.Repository;
 public interface ClienteRepository extends JpaRepository<Cliente, Long> {
 
     @Query("select new com.rendase.rendase.controller.dto.GetAllWithName("
-            + "c.id, c.nome) from Cliente c "
+            + "c.id, c.nome, c.contato) from Cliente c "
             + "where (:nome IS null OR c.nome LIKE %:nome%)")
     Page<GetAllWithName> getAllWithName(String nome, Pageable pageable);
 
