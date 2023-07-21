@@ -17,9 +17,7 @@ public class ProdutoService {
     private ProdutoRepository produtoRepository;
 
     public void save(Produto produto) {
-        Produto.builder()
-                        .descricao(produto.getDescricao())
-        produtoRepository.save(produto);
+         produtoRepository.save(produto);
     }
 
 }
