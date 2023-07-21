@@ -1,7 +1,9 @@
 package com.rendase.rendase.domain;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
@@ -9,6 +11,8 @@ import javax.persistence.*;
 @Builder
 @Entity
 @Table(name = "categoria")
+@AllArgsConstructor
+@NoArgsConstructor
 public class Categoria {
 
 
