@@ -10,27 +10,16 @@ import javax.persistence.*;
 @Data
 @Builder
 @Entity
-@Table(name = "cliente")
+@Table(name = "tamanho")
 @AllArgsConstructor
 @NoArgsConstructor
-public class Cliente {
+public class Tamanho {
 
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "nome")
-    private String nome;
-
-    @Column(name = "cpf")
-    private String cpf;
-
-    @OneToOne(cascade = CascadeType.PERSIST, orphanRemoval = true)
-    @JoinColumn(name = "enderecoid")
-    private Endereco endereco;
-
-    @Column(name = "contato")
-    private String contato;
-
+    @Column(name = "descricao")
+    private String descricao;
 }

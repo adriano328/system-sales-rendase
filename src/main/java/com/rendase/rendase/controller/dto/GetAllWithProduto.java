@@ -8,16 +8,18 @@ import lombok.NoArgsConstructor;
 import javax.persistence.Column;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import java.math.BigDecimal;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class GetAllWithProduto {
 
+    private Long id;
     private String descricao;
     private Categoria categoria;
     private String cor;
-    private double preco;
+    private BigDecimal preco;
     private String tamanho;
     private String sexo;
 

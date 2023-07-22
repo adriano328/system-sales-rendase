@@ -27,6 +27,7 @@ public class ProdutoService {
     @Autowired
     private ProdutoRepository produtoRepository;
 
+    @Transactional
     public void save(Produto produto) {
          produtoRepository.save(produto);
         log.info("Cadastrando Produto");
@@ -56,5 +57,4 @@ public class ProdutoService {
         log.info("Buscando todos os produtos");
         return produtoRepository.getAllWithProduto(descricao, categoria, cor, tamanho, sexo, pageable);
     }
-
 }

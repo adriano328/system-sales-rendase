@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 
 @Data
 @Builder
@@ -32,7 +33,7 @@ public class Produto {
     private String cor;
 
     @Column(name = "preco")
-    private double preco;
+    private BigDecimal preco;
 
     @Column(name = "tamanho")
     private String tamanho;

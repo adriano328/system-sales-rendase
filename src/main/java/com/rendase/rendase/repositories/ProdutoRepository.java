@@ -12,7 +12,7 @@ public interface ProdutoRepository extends JpaRepository<Produto, Long> {
 
 
     @Query("select new com.rendase.rendase.controller.dto.GetAllWithProduto("
-            + "p.descricao, p.categoria, p.cor, p.preco, p.tamanho, p.sexo) from Produto p "
+            + "p.id, p.descricao, p.categoria, p.cor, p.preco, p.tamanho, p.sexo) from Produto p "
             + "where (:descricao IS null OR p.descricao LIKE %:descricao%) "
             + "AND (:categoria is null OR p.categoria LIKE %:categoria%) "
             + "AND (:cor is null OR p.cor LIKE %:cor%) "
